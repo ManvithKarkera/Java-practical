@@ -1,0 +1,71 @@
+import java.util.Scanner ;
+ import java.lang.Math;
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Add");
+        System.out.println("Subtract");
+        System.out.println("Multiply");
+        System.out.println("Divide");
+        System.out.println("Raise to");
+        System.out.println("Modulus");
+        double b;
+
+
+
+        System.out.println("What operation do u wish to perform:");
+        Scanner s = new Scanner(System.in);
+        String operation= s.nextLine();
+        System.out.println("total number of numbers to perform operation on");
+        b = s.nextInt();
+        double a[] = new double[(int) b];
+
+
+        System.out.println("Enter desired numbers: ");
+        for(int i = 0;i<b;i++){
+            a[i] = s.nextDouble();
+        }
+
+
+        double result = 0;
+        double resultM = 1;
+
+        switch (operation) {
+            case "Add":
+               for(int j=0;j<15;j++) result = result + a[j];
+               break;
+
+            case "Subtract":
+                for(int j=0;j<15;j++) result = result - a[j];
+                break;
+            case "Multiply":
+                for(int j=1;j<b;j++) {resultM = resultM * a[j];}
+                break;
+            case "Divide":
+                resultM = a[0];
+                for(int j=1;j<b;j++) resultM = resultM / a[j];
+                break;
+            case "Modulus":
+                resultM = a[0];
+                for(int j=1;j<b;j++) resultM = resultM % a[j];
+                break;
+            case "Raise to":
+                result = a[0];
+                for(int i=1;i<b;i++) result = Math.pow(result,a[i]);
+                break;
+
+        }
+        if(operation.equals("Add")) {
+            System.out.print("Result = " + result);
+        }
+        else if(operation.equals("Subtract")){
+            System.out.print("Result = " + result);
+        }
+        else if(operation.equals("Raise to")){
+            System.out.println("Result = "+result);
+        }
+        else   { System.out.print("Result = " + resultM);
+        }
+
+    }
+}
